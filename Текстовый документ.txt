@@ -1,0 +1,47 @@
+public class Поток implements Iterable<УчебнаяГруппа> {
+private List<УчебнаяГруппа> списокГрупп;
+
+public Поток(List<УчебнаяГруппа> списокГрупп) {
+this.​списокГрупп списокГрупп;
+}
+
+@Override
+public Iterator<УчебнаяГруппа> iterator {
+return списокГрупп.​iterator;
+}
+}
+
+
+public class StreamComparator implements Comparator<Поток> {
+@Override
+public int compare(Поток поток1, Поток поток2) {
+int количествоГруппВПотоке1 поток1.​списокГрупп.size;
+int количествоГруппВПотоке2 поток2.​списокГрупп.​size;
+
+return количествоГруппВПотоке1 ⎯ количествоГруппВПотоке2;
+}
+}
+
+public class ПотокСервис {
+public void сортировкаПотоков(List<Поток> потоки) {
+StreamComparator comparator new StreamComparator;
+потоки.​sort(comparator);
+}
+}
+
+
+public class Контроллер {
+private ПотокСервис потокСервис;
+
+public Контроллер(ПотокСервис потокСервис) {
+this.​потокСервис потокСервис;
+}
+}
+
+public class Контроллер {
+private ПотокСервис потокСервис;
+
+public void сортировкаПотоков(List<Поток> потоки) {
+потокСервис.​сортировкаПотоков(потоки);
+}
+}
